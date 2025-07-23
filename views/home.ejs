@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/home.css" />
+</head>
+<body>
+
+
+  <% if (user) { %>
+    <div id="user-info" style="margin-bottom: 20px;">
+      <strong>Welcome, <%= user.name %>!</strong><br />
+      Username: <%= user.username %><br />
+      Role: <%= user.role %><br />
+      <form action="/logout" method="GET" style="display:inline;">
+        <button type="submit" class="delete-btn" style="margin-top:8px;">Logout</button>
+      </form>
+    </div>
+  <% } else { %>
+    <strong>Welcome, guest!</strong>
+    <button id="login">Login</button>
+    
+  <% } %>
+
+  <div id="toolbar">
+    <% if (user && user.role !== 'student') { %>
+      <button id="add">➕ Add</button>
+    <% } else { %>
+      <button id="add" class="disabled-btn" disabled>➕ Add</button>
+    <% } %>
+  </div>
+
+  <div class="card-container">
+    <% if (projects && projects.length > 0) { %>
+      <% projects.forEach((project, index) => { 
+          if (!user || user.role !== 'professor' || project.owner === user.name) {
+      %>
+        <div class="card">
+          <h3><%= project.project %></h3>
+          <p>Owner: <%= project.owner %></p>
+          <p><%= project.description %></p>
+
+          <% if (user && user.role !== 'student') { %>
+            <a href="/edit/<%= project._id %>">
+              <button class="edit-btn">Edit</button>
+            </a>
+            <form action="/delete/<%= project._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this project?');" style="display:inline;">
+              <button type="submit" class="delete-btn">Delete</button>
+            </form>
+          <% } else { %>
+            <button class="disabled-btn" disabled>Edit</button>
+            <button class="disabled-btn" disabled>Delete</button>
+          <% } %>
+        </div>
+      <% } }); %>
+    <% } else { %>
+      <p>No projects to display.</p>
+    <% } %>
+  </div>
+
+  <script>
+    const addBtn = document.getElementById("add");
+    if (addBtn && !addBtn.disabled) {
+      addBtn.addEventListener("click", () => {
+        window.location.href = "/add";
+      });
+    }
+    const loginBtn = document.getElementById("login");
+    loginBtn.addEventListener("click",()=>{
+      window.location.href = "/login"
+    })
+    
+  </script>
+
+</body>
+</html>

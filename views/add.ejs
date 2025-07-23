@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Form</title>
+</head>
+<body>
+
+  <h2>Project Information</h2>
+
+  <form action="/home" method="post">
+    <label for="project">Project Name:</label><br>
+    <input type="text" id="project" name="project" required><br><br>
+
+
+    <label for="owner">Owner Name:</label><br>
+    <input type="text" id="owner" name="owner" required><br><br>
+
+    
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="40" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script src="/home.js"></script>
+
+</body>
+</html>

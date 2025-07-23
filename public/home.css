@@ -1,0 +1,80 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212; 
+  color: #eee; 
+}
+
+#toolbar {
+  background-color: #1f2937; 
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#toolbar button {
+  padding: 10px 18px;
+  border: none;
+  color: white;
+  background-color: #3b82f6;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#toolbar button:hover {
+  background-color: #2563eb; 
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px;
+  justify-content: center;
+}
+
+
+.card {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb); 
+  border: 1px solid #d1d5db;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: #111827; 
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.card h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}

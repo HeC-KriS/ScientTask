@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/signup.css">
+
+</head>
+<body>
+    <form id="loginContainer" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+        <label for="username">Username:</label>
+        <input type="email" name="username" id="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <label for="role">Select your role:</label>
+        <select name="role" id="role" required>
+            <option value="">Choose one</option>
+            <option value="student">Student</option>
+            <option value="professor">Professor</option>
+            <option value="scient">Scient Member</option>
+        </select><br><br>
+        <button id="submit">Signup</button>
+
+    </form>
+    
+</body>
+</html>

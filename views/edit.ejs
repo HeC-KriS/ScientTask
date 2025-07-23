@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Project</title>
+</head>
+<body>
+  <form action="/edit/<%= project._id %>" method="POST">
+    <label>Project Name:</label>
+    <input type="text" name="project" value="<%= project.project %>" required /><br>
+
+    <label>Owner:</label>
+    <input type="text" name="owner" value="<%= project.owner %>" required /><br>
+
+    <label>Description:</label>
+    <textarea name="description" required><%= project.description %></textarea><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>
